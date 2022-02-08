@@ -4,24 +4,30 @@ export default function Footer(props) {
     return (
         <div className="footer dark">
             <div className="content">
-                <div className="left">
-                    <h3>Socials</h3>
-                    <ul>
-                        <li className="facebook"><a href="https://www.facebook.com/DLZStudios/">Facebook</a></li>
-                        <li className="instagram"><a href="https://www.instagram.com/dlzstudios/">Instagram</a></li>
-                        <li className="youtube"><a href="https://www.youtube.com/channel/UC-_X-_X-_X-_X-_X-_X-">YouTube</a></li>
-                    </ul>
-                </div>
                 <div className="copyright">
-                    <p>&copy; DLZ Studios {new Date().getFullYear()}</p>
-                </div>
-                <div className="right">
-                    <h2>Contact</h2>
+                    <h2>DLZ Studios Official Website</h2>
                     <p>
-                        <a className="mail" href="mailto:dlzstudios.contact@gmail.com">dlzstudios.contact(at)gmail.com</a>
+                        Made with React & Sass
+                        <br/>
+                        <i>&copy; DLZ Studios {new Date().getFullYear()}</i>
                     </p>
                 </div>
-                
+                <div className="info">
+                    <div className="left">
+                        <h2>Socials</h2>
+                        <ul>
+                            <li className="github"><a href="https://github.com/lukasz26671" target="_blank">Lukasz26671</a></li>
+                            <li className="github"><a href="https://github.com/ItQerk" target="_blank">ItQerk</a></li>
+                            <li className="youtube"><a href="https://www.youtube.com/channel/UClz5fx5m9YXl830X4OzF7bA" target="_blank">YouTube</a></li>
+                        </ul>
+                    </div>
+                    <div className="right">
+                        <h2>Contact</h2>
+                        <ul>
+                            <li className="mail"><a href="mailto:dlzstudios.contact@gmail.com">dlzstudios.contact(at)gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     );   

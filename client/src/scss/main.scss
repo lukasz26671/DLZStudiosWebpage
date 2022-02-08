@@ -83,22 +83,46 @@ a {
         align-items: center;
         text-align: left;
 
+        @media (max-width: 700px) {
+            & {
+                flex-direction: column;
+                align-items: center;
+            }
+            & ul {
+                padding-left: 0;
+            }
+        }
+
+
         & ul {
+            padding-left: 0;
             display: flex;
             & li {
                 list-style: none;
                 margin-bottom: 0.5em;
-                margin-left: .5em;
+                & > a{
+                    margin-left: 0.3em;
+                }
             }
             flex-direction: column;
         }
 
-        & .left, & .right {
+        & .info {
+            flex-direction: row;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-
-            flex-direction: column;
+            gap: 2em;
+            & .left, & .right {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            & .left {
+                justify-content: space-between;
+            }
+            & .right {
+                justify-content: space-between;
+            }
         }
         
     }
@@ -112,6 +136,15 @@ a {
 }
 .youtube {
     @include fa-icon-brands($fa-var-youtube);
+}
+.github {
+    @include fa-icon-brands($fa-var-github);
+}
+.mail {
+    @include fa-icon-solid($fa-var-envelope);
+    & > a {
+        margin-left: 0.3em;
+    }
 }
 
 .nav-links {
