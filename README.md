@@ -1,13 +1,16 @@
-# DLZ Studios Webpage
+# DLZ Studios Webpage  
 
 
-### Dev setup
+### Dev setup  
 
-#### npm
+#### npm  
 
-- Setup workspace:
+* Setup workspace:  
 `git clone https://github.com/lukasz26671/DLZStudiosWebpage.git`  
-`npm install` installs packages  
-- then open two powershell/cmd windows  
-`npm start` starts server  
-`npm run react-dev` compiles react code  
+- Install packages:  
+`npm install`  
+* Open two powershell/cmd windows  
+- Start a server: 
+`npm start`  
+- Start webpack bundler:  
+`npm run react-dev`  
