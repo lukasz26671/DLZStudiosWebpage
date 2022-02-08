@@ -5,8 +5,9 @@
 
 #### npm
 
-- PS> git clone https://github.com/lukasz26671/DLZStudiosWebpage.git
-- PS> npm install
+- Setup workspace:
+`git clone https://github.com/lukasz26671/DLZStudiosWebpage.git`
+`npm install` installs packages
 - then open two powershell/cmd windows
-- PS> npm start
-- PS> npm run react-dev
+`npm start` starts server
+`npm run react-dev` compiles react code
