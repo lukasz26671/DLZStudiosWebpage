@@ -1,0 +1,114 @@
+{
+  "name": "express-mysql-react-redux",
+  "version": "1.0.0",
+  "description": "MySQL, Express, React/Redux Boilerplate Application",
+  "scripts": {
+    "start": "babel-node server/app.js",
+    "clean": "rimraf node_modules && rimraf dist && npm install",
+    "webpack:dev": "cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.dev.js",
+    "webpack:prod": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.prod.js",
+    "build": "rimraf dist && npm run webpack:dev && npm run start",
+    "build:prod": "rimraf dist && npm run webpack:prod && npm run start",
+    "migrate": "knex migrate:latest",
+    "migrate:make": "knex migrate:make",
+    "migrate:rollback": "knex migrate:rollback",
+    "lint": "eslint client server; exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bikranshu/express-react-boilerplate.git"
+  },
+  "keywords": [
+    "node",
+    "es6",
+    "express",
+    "react",
+    "redux",
+    "react-router",
+    "webpack",
+    "boilerplate"
+  ],
+  "author": "Krishna Timilsina <bikranshu.t@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@loadable/component": "^5.14.1",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "bookshelf": "^1.2.0",
+    "classnames": "^2.3.1",
+    "compression": "^1.7.4",
+    "connected-react-router": "^6.9.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^5.0.0-alpha.7",
+    "helmet": "^4.4.1",
+    "history": "^4.10.1",
+    "http-status-codes": "^2.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "knex": "^0.95.4",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.4",
+    "redux-form": "^8.3.7",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "serve-favicon": "^2.5.0",
+    "swagger-jsdoc": "^4.3.2",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-function-bind": "^7.12.13",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/register": "^7.13.14",
+    "@hot-loader/react-dom": "^17.0.1",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "dotenv-webpack": "^1.8.0",
+    "eslint": "^7.23.0",
+    "eslint-plugin-react": "^7.23.1",
+    "husky": "^6.0.0",
+    "json-loader": "^0.5.7",
+    "lint-staged": "^10.5.4",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "react-hot-loader": "^4.13.0",
+    "rimraf": "^3.0.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-middleware": "^3.7.3",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-hot-middleware": "^2.25.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./client/**/**/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --trailing-comma es5 --single-quote --write"
+    ]
+  },
+  "engines": {
+    "node": ">= 6.9.0",
+    "npm": ">= 3.10.8"
+  }
+}
