@@ -10,10 +10,15 @@ $fa-font-path: "./webfonts";
 }
 
 
-html, body {
+html, body, #root {
     margin: 0; padding: 0;
+    min-height: 100%;
+    min-width: 100%;
 }
 
+.page-content {
+    min-height: 100%;
+}
 
 $dark_bg: #333;
 $light_bg: #f5f5f5;
@@ -25,6 +30,8 @@ a {
 }
 
 .header {
+    position: sticky;
+    top: 0px;
     background-color: $light_bg;
     padding: .25em .5em;
     border-bottom: 1px solid #ccc;
@@ -57,9 +64,8 @@ a {
 }
 
 .footer {
-    position: fixed;
+    position: static;
     bottom: 0;
-    width: 100%;
     background-color: $dark_bg;
     padding: .25em .5em;
     border-top: 1px solid #ccc;
