@@ -1,6 +1,130 @@
-@use "./fonts.scss";
+
+$fa-font-path: "./webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "./fonts.scss";
 
 * {
     font-family: 'Montserrat', sans-serif;
 }
 
+
+html, body {
+    margin: 0; padding: 0;
+}
+
+
+$dark_bg: #333;
+$light_bg: #f5f5f5;
+$dark_text: #fff;
+$light_text: #333;
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    background-color: $light_bg;
+    padding: .25em .5em;
+    border-bottom: 1px solid #ccc;
+    
+    &.light {
+        background-color: $light_bg;
+        border-bottom: 1px solid #ccc;
+
+        & * { color: $light_text;}
+    }
+    &.dark {
+        background-color: $dark_bg;
+        border-bottom: 1px solid #ccc;
+
+        & * { color: $dark_text; }
+    }
+    & > nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        & > #logo {
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: .25em;
+            padding-left: 2.5%;
+        }
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $dark_bg;
+    padding: .25em .5em;
+    border-top: 1px solid #ccc;
+    text-align: center;
+
+    &.light {
+        background-color: $light_bg;
+        border-top: 1px solid #ccc;
+
+        & * { color: $light_text; }
+    }
+    &.dark {
+        background-color: $dark_bg;
+        border-top: 1px solid #ccc;
+
+        & * { color: $dark_text; }
+    }
+    & .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: left;
+
+        & ul {
+            display: flex;
+            & li {
+                list-style: none;
+                margin-bottom: 0.5em;
+                margin-left: .5em;
+            }
+            flex-direction: column;
+        }
+
+        & .left, & .right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            flex-direction: column;
+        }
+        
+    }
+}
+
+.facebook {
+    @include fa-icon-brands($fa-var-facebook);
+}
+.instagram {
+    @include fa-icon-brands($fa-var-instagram);
+}
+.youtube {
+    @include fa-icon-brands($fa-var-youtube);
+}
+
+.nav-links {
+    text-align: right;
+    padding: 10px 30px;
+    font-size: 1.5em;
+    & > ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 0 1em;
+
+        &:hover {
+            text-shadow: 0 0 5px #fff;
+        }
+    }
+}
