@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import {BrowserRouter as HashRouter, Route, Switch} from 'react-router-dom';
+import {isMobile} from 'react-device-detect';
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
@@ -10,8 +11,17 @@ import Contact from './routes/Contact.jsx';
 
 class App extends Component {
 
+  
+
   componentDidMount() {
     document.title = "DLZ Studios";
+    document.body.classList.toggle("mobile", isMobile);
+    console.log(isMobile);
+  }
+
+  componentDidUpdate() {
+    document.body.classList.toggle("mobile", isMobile);
+    console.log(isMobile);
   }
 
   constructor(props) {

@@ -210,6 +210,13 @@ a {
     }
 }
 
+body.mobile .projects {
+    font-size: .75rem;
+    & .title {
+        font-size: minmax(1.5rem, 1.05vmin);
+    }
+}
+
 .projects {
     display: grid;
     flex-wrap: wrap;
@@ -248,9 +255,10 @@ a {
     @media (max-width: 1300px) {
         & {
             grid-template-columns: repeat(1, minmax(300px, 1fr));
+
         }
     }
-    @media (max-width: 740px) {
+    @media screen and (max-width: 740px) {
         & {
             padding: .2em .2em;
             grid-template-columns: 1fr;
