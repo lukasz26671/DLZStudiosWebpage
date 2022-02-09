@@ -52,6 +52,7 @@ a {
     background-color: $light_bg;
     padding: .25em .5em;
     border-bottom: 1px solid #ccc;
+    z-index: 2;
     
     &.light {
         background-color: $light_bg;
