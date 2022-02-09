@@ -1,7 +1,17 @@
 const path = require('path');
+const CompressionPlugin = require("compression-webpack-plugin");
+const webpack = require("webpack");
+const TerserPlugin = require('terser-webpack-plugin');
 
+const PROD = (process.env.NODE_ENV === 'production');
 module.exports = {
   mode: 'development',
+  plugins: [
+    new CompressionPlugin({
+      test: /\.js(\?.*)?$/i,
+      algorithm: "gzip",
+    }),
+  ],
   entry: {
     main: path.resolve(__dirname, './client/src/index.jsx'),
   },
@@ -32,10 +42,20 @@ module.exports = {
           },
         ],
       },
-    ]
+      {
+        test: /\.html$/i,
+        type: "asset/resource",
+      },
+    ],
+  },
+  optimization: {
+    minimize: PROD,
+    minimizer: [
+      new TerserPlugin({ parallel: true })
+    ],
   },
   output: {
     path: path.resolve(__dirname, './client/dist'),
-    filename: 'bundle.js',
+    filename: PROD ? 'bundle.min.js' : 'bundle.js'
   },
 };

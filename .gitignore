@@ -3,3 +3,4 @@ node_modules/*
 client/dist
 !client/dist/index.html
 !client/dist/bundle.js
+!client/dist/bundle.js.gz
