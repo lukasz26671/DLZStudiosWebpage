@@ -16,9 +16,9 @@ export default function Footer(props) {
                     <div className="left">
                         <h2>Socials</h2>
                         <ul>
-                            <li className="github"><a href="https://github.com/lukasz26671" target="_blank">Lukasz26671</a></li>
-                            <li className="github"><a href="https://github.com/ItQerk" target="_blank">ItQerk</a></li>
-                            <li className="youtube"><a href="https://www.youtube.com/channel/UClz5fx5m9YXl830X4OzF7bA" target="_blank">YouTube</a></li>
+                            <li className="github"><a href="https://github.com/lukasz26671" rel="noopener" target="_blank">Lukasz26671</a></li>
+                            <li className="github"><a href="https://github.com/ItQerk" rel="noopener" target="_blank">ItQerk</a></li>
+                            <li className="youtube"><a href="https://www.youtube.com/channel/UClz5fx5m9YXl830X4OzF7bA" rel="noopener" target="_blank">YouTube</a></li>
                         </ul>
                     </div>
                     <div className="right">

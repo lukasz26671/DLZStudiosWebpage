@@ -29,6 +29,7 @@ html, body, #root {
 
 .page-content {
     min-height: 100%;
+    height: 100%;
 }
 @media screen and (max-width: 400px) {
     body {
@@ -62,6 +63,96 @@ a {
     }
 }
 
+@-webkit-keyframes slide-rotate-ver-right {
+    0% {
+      -webkit-transform: translateX(0) rotateY(0);
+              transform: translateX(0) rotateY(0);
+    }
+    100% {
+      -webkit-transform: translateX(150px) rotateY(-90deg);
+              transform: translateX(150px) rotateY(-90deg);
+    }
+  }
+  @keyframes slide-rotate-ver-right {
+    0% {
+      -webkit-transform: translateX(0) rotateY(0);
+              transform: translateX(0) rotateY(0);
+    }
+    100% {
+      -webkit-transform: translateX(150px) rotateY(-90deg);
+              transform: translateX(150px) rotateY(-90deg);
+    }
+  }
+.slide-rotate-ver-right {
+-webkit-animation: slide-rotate-ver-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) alternate-reverse both;
+        animation: slide-rotate-ver-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) alternate-reverse both;
+}
+.flipInX {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes flipInX {
+0% {
+-webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+-webkit-transition-timing-function: ease-in;
+transition-timing-function: ease-in;
+opacity: 0;
+}
+40% {
+-webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+-webkit-transition-timing-function: ease-in;
+transition-timing-function: ease-in;
+}
+60% {
+-webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+opacity: 1;
+}
+80% {
+-webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+}
+100% {
+-webkit-transform: perspective(400px);
+transform: perspective(400px);
+}
+}
+@keyframes flipInX {
+0% {
+-webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+-webkit-transition-timing-function: ease-in;
+transition-timing-function: ease-in;
+opacity: 0;
+}
+40% {
+-webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+-webkit-transition-timing-function: ease-in;
+transition-timing-function: ease-in;
+}
+60% {
+-webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+opacity: 1;
+}
+80% {
+-webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+}
+100% {
+-webkit-transform: perspective(400px);
+transform: perspective(400px);
+}
+} 
 .header {
     position: sticky;
     top: 0px;
@@ -78,7 +169,7 @@ a {
     }
     &.dark {
         background-color: $dark_bg;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #000;
 
         & * { color: $dark_text; }
     }
@@ -248,7 +339,7 @@ a {
 .content-wrapper {
     padding: 0.5em 2em 0.5em 2em; 
     min-height: 100%;   
-
+    height: 100%;
     @media (max-width: 740px) {
         & {
             padding: 0 .5em 0 0.5em;
@@ -380,6 +471,54 @@ body.mobile .projects {
                     @include aspect-ratio(1, 1);
                     height: auto;
                     min-height: minmax(300px, auto);
+                }
+            }
+        }
+    }
+}
+
+.content-wrapper {
+    padding: 0; 
+    & .landing {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: .5fr 2fr .5fr;
+        height: 90%;
+        overflow: hidden;
+
+        & > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            min-width: 101%;
+            height: 100%;
+            text-align: center;
+        }
+
+        & .opener {
+            text-align: center;
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+
+        & .subtitle {
+            color: $dark_text;
+        }
+
+        & .title {
+            font-size: 3.5em;
+            font-family: "Roboto", "Helvetica Neue", sans-serif;
+            font-weight: bold;
+            color: #fa1a1a;
+            text-shadow: 0 0 2px #000;
+            margin: 0;
+            padding: 0;
+
+            @media (max-width: 740px) {
+                & {
+                    font-size: 1.5em;
                 }
             }
         }

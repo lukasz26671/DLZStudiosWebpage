@@ -2,7 +2,7 @@ const path = require('path');
 const CompressionPlugin = require("compression-webpack-plugin");
 const webpack = require("webpack");
 const TerserPlugin = require('terser-webpack-plugin');
-
+const multi = require("multi-loader");
 const PROD = (process.env.NODE_ENV === 'production');
 module.exports = {
   mode: 'development',
@@ -12,10 +12,12 @@ module.exports = {
       algorithm: "gzip",
     }),
   ],
+
   entry: {
     main: path.resolve(__dirname, './client/src/index.jsx'),
   },
   module: {
+
     rules: [
       {
         test: [/\.jsx$/],
@@ -32,15 +34,19 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpeg|gif|jpg)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
+        test: /\.(png|jpg|jpeg|webp)$/,
+        loader: "file-loader",
+        options: {
+          loaders: [
+            {
+              test: /\.(jpe?g|png)$/i,
+              loaders: [
+                'file-loader',
+                'webp-loader'
+              ]
             }
-          },
-        ],
+          ]
+        }
       },
       {
         test: /\.html$/i,

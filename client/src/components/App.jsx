@@ -30,23 +30,25 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter>
-          <Header />
-          <div className="page-content">
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/contact">
-                <Contact />
-              </Route>
-              <Route path="/projects">
-                <Projects />
-              </Route>
-            </Switch>
-          </div>
-          <Footer />
-      </HashRouter>
+      <React.StrictMode>
+        <HashRouter>
+            <Header />
+            <div className="page-content">
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+                <Route path="/projects">
+                  <Projects />
+                </Route>
+              </Switch>
+            </div>
+            <Footer />
+        </HashRouter>
+      </React.StrictMode>
     );
   }
 }
