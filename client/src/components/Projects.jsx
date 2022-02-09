@@ -24,6 +24,8 @@ export default function Projects(props) {
             </Card>
             <Card class="hero" img={exocraft} title="Exocraft" link="https://github.com/lukasz26671/Exocraft">
                 Next-gen minecraft mod that expands your modding experience with support for many mods!
+                
+                <p>Note: GitRepo is private atm.</p>
             </Card>
             <Card class="hero" img={logo} title="This webpage" link="https://github.com/lukasz26671/DLZStudiosWebpage">
                 Made using React & Sass, with webpack support, allows you to see this website!
