@@ -300,6 +300,7 @@ a {
             height: 300px;
             grid-column: 2/3;
 
+            user-select: none;
             @media (max-width: 740px) {
                 & {
                     grid-column: 1/2;
