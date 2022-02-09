@@ -88,6 +88,7 @@ a {
     padding: .25em .5em;
     border-top: 1px solid #ccc;
     text-align: center;
+    max-width: 100vw;
 
     &.light {
         background-color: $light_bg;
@@ -215,6 +216,13 @@ a {
         }
     }
 
+    & .link {
+        color: $dark_text;
+        font-weight: bold;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     @media (min-width: 1800px) {
         & > :nth-child(2n+1) {
             grid-column: auto / span 2;
@@ -262,7 +270,7 @@ a {
 
         &:hover {
             box-shadow: 0 0 5px #ccc;
-            transform: scale(1.05);
+            transform: scale(1.01);
         }
         &.hero {
             background-color: $dark_bg;
@@ -277,6 +285,7 @@ a {
             width: auto;
             height: auto;
             max-height: 300px;
+            height: 300px;
             grid-column: 2/3;
 
             @media (max-width: 740px) {
@@ -284,7 +293,20 @@ a {
                     grid-column: 1/2;
                     grid-row: 2/3;
                     max-width: 100%;
+                    width: minmax(300px, 100%);
                     @include aspect-ratio(1, 1);
+                    min-height: 300px;
+                }
+            }
+            @media (max-width: 400px) {
+                & {
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                    max-width: 100%;
+                    width: minmax(300px, 100%);
+                    @include aspect-ratio(1, 1);
+                    height: auto;
+                    min-height: minmax(300px, auto);
                 }
             }
         }
