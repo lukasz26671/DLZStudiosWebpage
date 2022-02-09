@@ -7,7 +7,7 @@ export default function Footer(props) {
                 <div className="copyright">
                     <h2>DLZ Studios Official Website</h2>
                     <p>
-                        Made with React & Sass
+                        Made with <i class="fab fa-react"></i> & <i class="fab fa-sass"></i>
                         <br/>
                         <i>&copy; DLZ Studios {new Date().getFullYear()}</i>
                     </p>
