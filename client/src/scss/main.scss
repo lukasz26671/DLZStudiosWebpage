@@ -29,6 +29,23 @@ a {
     text-decoration: none;
 }
 
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc(($height / $width) * 100%);
+    }
+    > .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+}
+
 .header {
     position: sticky;
     top: 0px;
@@ -167,3 +184,109 @@ a {
         }
     }
 }
+
+.content-wrapper {
+    padding: 0.5em 2em 0.5em 2em; 
+    min-height: 100%;   
+
+    @media (max-width: 740px) {
+        & {
+            padding: 0 .5em 0 0.5em;
+        }
+    }
+}
+
+.projects {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    gap: 2em;
+    padding: 2em;
+
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+
+    & > div {
+        min-width: 30%;
+        & > img {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 1800px) {
+        & > :nth-child(2n+1) {
+            grid-column: auto / span 2;
+        }
+    }
+    @media (max-width: 1800px) {
+        & {
+            grid-template-columns: repeat(2, minmax(300px, 1fr));
+        }
+    }
+    @media (max-width: 1200px) {
+        & {
+            grid-template-columns: repeat(1, minmax(300px, 1fr));
+        }
+    }
+    @media (max-width: 740px) {
+        & {
+            padding: .2em .2em;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+        }
+    }
+
+    & .card {
+
+        background-color: $light_bg;
+        border-radius: 0.5em;
+        padding: 1em;
+        margin: 1em;
+        box-shadow: 0 0 5px #ccc;
+        transition: all 0.3s ease-in-out;
+        grid-template-columns: 1fr auto;
+        display: grid;
+        gap: 1em;
+        min-width: minmax(400px, 100%);
+        word-wrap: break-word;
+
+        @media (max-width: 740px) {
+            & {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr auto;
+                margin: 0.25em;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0 0 5px #ccc;
+            transform: scale(1.05);
+        }
+        &.hero {
+            background-color: $dark_bg;
+            color: $dark_text;
+        }
+        & > .image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        & .img {
+            width: auto;
+            height: auto;
+            max-height: 300px;
+            grid-column: 2/3;
+
+            @media (max-width: 740px) {
+                & {
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                    max-width: 100%;
+                    @include aspect-ratio(1, 1);
+                }
+            }
+        }
+    }
+}
+

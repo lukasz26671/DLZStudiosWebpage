@@ -1,9 +1,11 @@
 import React from 'react';
-import logo from "../../img/logo.jpg";
+import Projects from "../Projects.jsx";
+
 export default function Home(props) {
     return (
-        <div>
+        <div className="content-wrapper">
             <h2>Home page</h2>
+            <Projects />
         </div>
     );
 }
