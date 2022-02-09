@@ -5,9 +5,6 @@ $fa-font-path: "./webfonts";
 @import "@fortawesome/fontawesome-free/scss/brands";
 @import "./fonts.scss";
 
-* {
-    font-family: 'Montserrat', sans-serif;
-}
 
 body::-webkit-scrollbar {
     width: 1em;
@@ -27,6 +24,7 @@ html, body, #root {
     min-height: 100% !important;
     min-width: 100%;
     height: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .page-content {
@@ -86,8 +84,10 @@ a {
         position: relative;
 
         & > #logo {
+            font-family: 'Lato', sans-serif;
             font-size: 2em;
-            font-weight: bold;
+            font-weight: 700;
+            font-style: italic;
             margin-top: .25em;
             padding-left: 2.5%;
         }
@@ -162,7 +162,22 @@ a {
                 justify-content: space-between;
             }
         }
-        
+        & .copyright {
+
+            > h2 {
+                font-family: "Open Sans", sans-serif;
+                font-size: 1.5em;
+                font-style: italic;
+            }
+            > p > span{
+                font-family: "Roboto", sans-serif;
+            }
+        }
+    }
+}
+.facebook, .instagram, .youtube, .github, .react, .mail {
+    > a {
+        font-family: "Roboto", "Helvetica Neue", sans-serif;
     }
 }
 
@@ -280,6 +295,7 @@ body.mobile .projects {
         gap: 1em;
         min-width: minmax(400px, 100%);
         word-wrap: break-word;
+        font-family: "Roboto", "Helvetica Neue", sans-serif;
 
         @media (max-width: 740px) {
             & {
@@ -302,6 +318,11 @@ body.mobile .projects {
             align-items: center;
             justify-content: center;
         }
+
+        & .title {
+            font-family: "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
         & .img {
             width: auto;
             height: auto;

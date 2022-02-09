@@ -9,7 +9,7 @@ export default function Footer(props) {
                     <p>
                         Made with <i className="fab fa-react"></i> & <i className="fab fa-sass"></i>
                         <br/>
-                        <i>&copy; DLZ Studios {new Date().getFullYear()}</i>
+                        <span>&copy; DLZ Studios {new Date().getFullYear()}</span>
                     </p>
                 </div>
                 <div className="info">

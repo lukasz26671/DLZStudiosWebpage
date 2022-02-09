@@ -7,7 +7,7 @@ import Footer from './Footer.jsx';
 
 import Home from './routes/Home.jsx';
 import Contact from './routes/Contact.jsx';
-
+import Projects from "./routes/Projects.jsx";
 
 class App extends Component {
 
@@ -39,6 +39,9 @@ class App extends Component {
               </Route>
               <Route path="/contact">
                 <Contact />
+              </Route>
+              <Route path="/projects">
+                <Projects />
               </Route>
             </Switch>
           </div>
