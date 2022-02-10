@@ -5,7 +5,7 @@ export default function Header(props) {
     return (
         <div className="header dark">
             <nav>
-                <h2 id="logo">DLZ Studios {props?.additional}</h2>
+                <h2 id="logo"><Link to="/">DLZ Studios {props?.additional}</Link></h2>
                 <div className="nav-links">
                     <ul>
                         <li><Link to="/">Home</Link></li>
